@@ -13,15 +13,16 @@ I couldn't see how to create a scatterplot matrix in Jamovi right away so I foun
 
 ```{r}
 # The pairs and plots functions are part of baseR
+data=rio::import("Exam Anxiety.sav")
 
 # pairs using column numbers
-pairs(data[,2:4], pch = 19)
+pairs(data[ ,2:4], pch = 19)
 
 # pairs using formula format
 pairs(~Revise + Exam + Anxiety, data=data, pch = 19)
 
 # Plot
-plot(data[ , 2:4] , pch=20 , cex=1.5 , col="#69b3a2")
+plot(data[ ,2:4] , pch=20 , cex=1.5 , col="#69b3a2")
 
 
 # the ggpairs function is part of GGally package which expands ggplot2 package
